@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Real-Time Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <div class="login-box">
+            <h2>🚀 Join the Chat!</h2>
+            <p>Enter your name to start chatting with others</p>
+            <input type="text" id="username-input" placeholder="What's your name?" maxlength="20">
+            <button id="login-btn">Join Chat Room</button>
+        </div>
+    </div>
+
+    <div id="chat-container" class="container hidden">
+        <div class="chat-header">
+            <h3>💬 Chat Room</h3>
+            <div class="user-info">
+                <span>Hello, <strong id="current-user"></strong>!</span>
+                <button id="logout-btn">Leave Chat</button>
+            </div>
+        </div>
+
+        <div class="chat-main">
+            <div class="users-sidebar">
+                <h4>👥 Online Users (<span id="users-count">0</span>)</h4>
+                <div id="users-list"></div>
+            </div>
+
+            <div class="chat-area">
+                <div id="messages-container">
+                    <div class="welcome-message">
+                        <h3>🎉 Welcome to the chat!</h3>
+                        <p>Start typing below to send your first message</p>
+                    </div>
+                </div>
+                
+                <div id="typing-indicator"></div>
+                
+                <div class="message-input-area">
+                    <input type="text" id="message-input" placeholder="Type your message here..." maxlength="500">
+                    <button id="send-btn">Send 📤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
